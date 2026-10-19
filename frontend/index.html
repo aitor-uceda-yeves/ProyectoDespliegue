@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ClubManager: gestión deportiva y financiera de un club de fútbol.">
+  <title>ClubManager — Centro de operaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="crest">CM</span><span>club<span class="brand-light">manager</span><small>FOOTBALL OPERATIONS</small></span></a>
+    <div class="club-switch"><div class="club-badge">FC</div><div><strong>Atlético Horizonte</strong><small>Primer equipo · 2026/27</small></div><span>⌄</span></div>
+    <p class="nav-label">ESPACIO DE TRABAJO</p>
+    <nav id="navigation">
+      <button class="nav-item active" data-page="dashboard"><span>◫</span> Resumen</button>
+      <button class="nav-item" data-page="players"><span>♟</span> Plantilla <b id="nav-player-count">—</b></button>
+      <button class="nav-item" data-page="contracts"><span>▤</span> Contratos</button>
+      <button class="nav-item" data-page="training"><span>◷</span> Entrenamientos</button>
+      <button class="nav-item" data-page="matches"><span>⚽</span> Partidos</button>
+      <button class="nav-item" data-page="stats"><span>↗</span> Estadísticas</button>
+      <button class="nav-item" data-page="injuries"><span>✚</span> Enfermería <b id="nav-injury-count">—</b></button>
+      <button class="nav-item" data-page="finance"><span>€</span> Finanzas</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="system-dot"></div><span>Servicios conectados<small>PostgreSQL · Redis · API</small></span><span class="status-dot"></span></div>
+    <div class="user-profile"><div class="user-avatar">AD</div><div><strong>Alex Domínguez</strong><small>Dirección deportiva</small></div><span>•••</span></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar"><div><span class="crumb">Atlético Horizonte <span>/</span> <b id="crumb-current">Resumen</b></span><h1 id="page-title">Centro de operaciones</h1></div><div class="top-actions"><span class="season-pill">2026 / 27 <span>⌄</span></span><button id="refresh" class="refresh-button">↻ <span>Actualizar</span></button><div class="notification">♧<i></i></div></div></header>
+    <section id="page-content"><div class="loading">Cargando datos del club…</div></section>
+    <footer><span>CLUBMANAGER <b>●</b> SISTEMA DE GESTIÓN DEPORTIVA</span><span>Proyecto educativo DAW · Datos de demostración</span></footer>
+  </main>
+
+  <dialog id="record-dialog">
+    <form id="record-form" method="dialog">
+      <div class="modal-head"><div><span class="eyebrow">GESTIÓN DEL CLUB</span><h2 id="modal-title">Nuevo registro</h2></div><button type="button" class="close-modal" id="modal-close">×</button></div>
+      <div id="modal-fields" class="modal-fields"></div>
+      <p id="modal-error" class="modal-error"></p>
+      <div class="modal-actions"><button type="button" class="secondary-button" id="modal-cancel">Cancelar</button><button type="submit" class="primary-button">Guardar registro <span>→</span></button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast"></div>
+</body>
+</html>
